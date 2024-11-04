@@ -1,9 +1,9 @@
 // components/chips/ChipsExample.jsx
 import React, { useState } from 'react';
-import SelectionChip from './SelectionChip';
-import FeedbackChip from './FeedbackChip';
+import SelectionChip from './selectionChip';
+import FeedbackChip from './feedbackChip';
 
-const ChipsExample = () => {
+function Chips() {
   const [selectedChip, setSelectedChip] = useState(null);
 
   const handleChipClick = (chipLabel) => {
@@ -15,11 +15,15 @@ const ChipsExample = () => {
       <SelectionChip
         label="Chips"
         selected={selectedChip === 'Chips'}
-        onClick={() => handleChipClick('Chips')}
-      />
-      <FeedbackChip /> {/* No changes needed here */}
+        onClick={() => handleChipClick('Chips')} />
+                
+      <FeedbackChip
+        defaultLabel="Very good"
+        hoverLabel="Efficiency Very good"
+        avatarText="E"
+        avatarStyle={{ bgcolor: 'green', color: 'white' }}/>
     </div>
   );
-};
+}
 
-export default ChipsExample;
+export default Chips;

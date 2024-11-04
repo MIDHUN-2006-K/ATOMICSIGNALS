@@ -2,11 +2,8 @@
 import React, { useState } from 'react';
 import { Autocomplete, TextField, Typography } from '@mui/material';
 
-const Autosuggest = () => {
+const Autosuggest = ({ suggestions = [] }) => {
   const [error, setError] = useState(false);
-
-  // Example suggestions
-  const suggestions = ["CEO", "Manager", "CTO", "COO", "CFO"];
 
   return (
     <div style={{ width: 300 }}>
