@@ -1,23 +1,26 @@
-// src/App.jsx
-import React from 'react';
-import { useThemeContext } from './components/theme/themeContext';
-import { Button } from '@mui/material';
-import Chips from './components/chips';
-import AutoSuggest from "./components/autoSuggest/index";
-import SignupPage from './components/signupPage/signupPage';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; // Import Router components
+import SignupPage from "./components/signupPage/signupPage";
+import SignUpDetails from "./components/signupDetails/signupDetails"; // Ensure the path is correct
+import SetUpPage from "./components/setupPage/setupPage";
+import LoginPage from "./components/welcomPage/welcomePage";
+import ForgotPassword from "./components/forgetPassword/forgetPassword";
+import ResetPassword from "./components/forgetPassword/resetPassword";
 
-
-const sampleOptions = ["Apple", "Banana", "Cherry"];
 const App = () => {
-    const { toggleTheme } = useThemeContext();
-
-    return (
-        <div >
-        <Chips />
-        <AutoSuggest suggestions={["CEO", "Manager", "C", "COO", "CFO"]} />
-
-        </div>
-    );
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<SignupPage />} />
+        <Route path="/signup" element={<SignUpDetails />} />
+        <Route path="/setup" element={<SetUpPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/forgot" element={<ForgotPassword />} />
+        <Route path="/reset" element={<ResetPassword/>}/>
+      </Routes>
+    </Router>
+    
+  );
 };
 
 export default App;

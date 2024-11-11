@@ -1,18 +1,18 @@
-// File: src/theme/lightTheme.js
 const lightTheme = {
   typography: {
     fontFamily: "Poppins",
-    // fontSize: 12.25, // Don't change this if it affects default size
+    // fontSize: 12.25, // Don't change this, as it has the default font size as 14 or 0.875rem by default
   },
   palette: {
     text: {
       primary: "#353448",
-      secondary: "#000000",
+      secondary: "#71707E",
       disabled: "#B9B9B9",
+      normal:"#EBEBEB"
     },
     primary: {
-      main: "#49C792",
-      light: "#6CDBAD", // lighter shade of the green
+      main: "#665CD7",
+      light: "#948DE3",
       contrastText: "rgba(256,256,256)",
     },
     secondary: {
@@ -23,6 +23,7 @@ const lightTheme = {
       outlinedHover: "#EEFBF6",
       disable: "#B9B9B9",
       textColor: "#FFFFFF",
+      borderColor:"#CACACA"
     },
     error: {
       main: "#F44F5A",
@@ -30,25 +31,32 @@ const lightTheme = {
     success: {
       main: "#49C792",
     },
+    background: {
+      default: "#FFFFFF",
+      paper: "#FFFFFF",
+    },
+    action: {
+      disabledBackground: "#F5F5F5", // Define the disabled background color
+      disabled: "#CACACA", // Define the disabled text color
+    },
   },
   components: {
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
+          background: "#FFFFFF", // Set the background color for the input
+          borderRadius: "4px",
           "& .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#EBEBEB",
+            borderColor: "#EBEBEB", // Default border color
           },
           "&:hover .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#CACACA",
+            borderColor: "#CACACA", // Hover border color
           },
           "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#49C792",
-          },
-          "&.Mui-active .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#EBEBEB",
+            borderColor: "#49C792", // Focused border color
           },
           "&.Mui-disabled .MuiOutlinedInput-notchedOutline": {
-            borderColor: "#CACACA",
+            borderColor: "#CACACA", // Disabled border color
           },
         },
       },
